@@ -6,6 +6,8 @@ import Image from "next/image";
 import HeroSlideshow from "@/components/HeroSlideshow";
 import Link from "next/link";
 
+export const dynamic = "force-dynamic";
+
 export default async function HomePage({
   params,
 }: {

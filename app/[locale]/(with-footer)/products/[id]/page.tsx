@@ -8,6 +8,8 @@ import { getDictionary } from "@/lib/getDictionary";
 import Image from "next/image";
 import Link from "next/link";
 
+export const dynamic = "force-dynamic";
+
 const CARD_COLORS = ["#EEE8E0", "#E8E4EC", "#E4EBE4", "#EDE6DC", "#DDE4EC", "#EDE8E0"];
 
 export default async function ProductPage({
