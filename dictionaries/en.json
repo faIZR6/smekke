@@ -1,0 +1,68 @@
+{
+  "nav": {
+    "collection": "Collection",
+    "cart": "Cart",
+    "admin": "Admin"
+  },
+  "home": {
+    "eyebrow": "The Collection",
+    "headline": "Elegance,\nReimagined.",
+    "description": "Luxurious dresses with a discreetly integrated bib — designed for those who refuse to compromise on style.",
+    "viewCollection": "View Collection",
+    "categories": ["Evening", "Formal", "Day", "Evening", "Day", "Garden"],
+    "values": {
+      "design": { "title": "Discreet by Design", "text": "Each integrated bib is invisible from the outside — part of the garment, not an afterthought." },
+      "materials": { "title": "Premium Materials", "text": "We source only the finest silks, velvets, and wools from European mills." },
+      "quality": { "title": "Made to Last", "text": "Thoughtful construction means every dress is built to be worn, loved, and worn again." }
+    }
+  },
+  "product": {
+    "back": "← Collection",
+    "available": "{n} pieces available",
+    "selectSize": "Select a size",
+    "size": "Size",
+    "addToCart": "Add to Cart",
+    "added": "Added ✓",
+    "outOfStock": "Out of Stock",
+    "delivery": "Free delivery on orders over €150. Returns accepted within 14 days."
+  },
+  "cart": {
+    "empty": "Your cart is empty",
+    "explore": "Explore the Collection",
+    "title": "Your Cart",
+    "size": "Size",
+    "each": "each",
+    "total": "Total",
+    "remove": "Remove",
+    "checkout": "Checkout →"
+  },
+  "checkout": {
+    "summary": "Order Summary",
+    "delivery": "Delivery Details",
+    "name": "Full name",
+    "email": "Email",
+    "address": "Delivery address",
+    "place": "Place Order",
+    "placing": "Placing order…",
+    "error": "Something went wrong. Please try again."
+  },
+  "confirmed": {
+    "title": "Order Confirmed",
+    "order": "Order #",
+    "text": "Thank you for your order. We'll send a confirmation to your email and be in touch when your dress is on its way.",
+    "back": "Back to Collection"
+  },
+  "comingSoon": {
+    "title": "Coming Soon",
+    "text": "Something beautiful is on its way."
+  },
+  "admin": {
+    "title": "Orders",
+    "noOrders": "No orders yet.",
+    "product": "Product",
+    "qty": "Qty",
+    "price": "Price",
+    "total": "Total",
+    "status": { "pending": "Pending", "shipped": "Shipped", "delivered": "Delivered" }
+  }
+}

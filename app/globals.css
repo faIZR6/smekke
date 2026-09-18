@@ -1,0 +1,158 @@
+@import "tailwindcss";
+
+@keyframes driftA {
+  0%, 100% { transform: translate3d(0px, 0px, 0px); }
+  50% { transform: translate3d(-30px, -20px, 0px); }
+}
+
+@keyframes driftB {
+  0%, 100% { transform: translate3d(0px, 0px, 0px); }
+  50% { transform: translate3d(24px, 14px, 0px); }
+}
+
+@keyframes driftC {
+  0%, 100% { transform: translate3d(0px, 0px, 0px); }
+  50% { transform: translate3d(-18px, 22px, 0px); }
+}
+
+@keyframes driftD {
+  0%, 100% { transform: translate3d(0px, 0px, 0px); }
+  50% { transform: translate3d(20px, -16px, 0px); }
+}
+
+/* ─── Base ────────────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+  --font-heading: var(--font-cormorant, Georgia, serif);
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  font-family: var(--font-inter, sans-serif);
+  background: var(--background);
+  color: var(--text);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* ─── Theme: Classic ─────────────────────────────────────── */
+html[data-theme="classic"] {
+  --background: #FAF9F7;
+  --surface:    #FFFFFF;
+  --border:     #E8E2D9;
+  --text:       #1A1817;
+  --text-muted: #6B6360;
+  --accent:     #B8955A;
+  --font-heading: var(--font-cormorant, Georgia, serif);
+  --hero-align: flex-start;
+  --hero-text:  left;
+}
+
+/* ─── Theme: Noir (default) ──────────────────────────────── */
+html,
+html[data-theme="noir"] {
+  --background: #0C0B0A;
+  --surface:    #171614;
+  --border:     #2C2925;
+  --text:       #F0EAE0;
+  --text-muted: #8A837A;
+  --accent:     #D4AF37;
+  --font-heading: var(--font-cormorant, Georgia, serif);
+  --hero-align: center;
+  --hero-text:  center;
+}
+
+html[data-theme="noir"] .product-card-bg[data-index="0"] { background: #1A1710; }
+html[data-theme="noir"] .product-card-bg[data-index="1"] { background: #141218; }
+html[data-theme="noir"] .product-card-bg[data-index="2"] { background: #101410; }
+html[data-theme="noir"] .product-card-bg[data-index="3"] { background: #16120F; }
+html[data-theme="noir"] .product-card-bg[data-index="4"] { background: #111318; }
+html[data-theme="noir"] .product-card-bg[data-index="5"] { background: #181512; }
+html[data-theme="noir"] .dress-icon                       { color: #D4AF37; }
+
+html[data-theme="noir"] .hero-divider { border-color: #2C2925; }
+
+/* ─── Theme: Blanc ───────────────────────────────────────── */
+html[data-theme="blanc"] {
+  --background: #FFFFFF;
+  --surface:    #F7F7F7;
+  --border:     #111111;
+  --text:       #000000;
+  --text-muted: #555555;
+  --accent:     #000000;
+  --font-heading: var(--font-playfair, Georgia, serif);
+  --hero-align: center;
+  --hero-text:  center;
+}
+
+html[data-theme="blanc"] .product-card-bg               { background: #F2F2F2; }
+html[data-theme="blanc"] .product-grid                  { grid-template-columns: repeat(2, 1fr); }
+html[data-theme="blanc"] .dress-icon                    { color: #111111; }
+html[data-theme="blanc"] .hero-section                  { border-bottom: 1px solid #111; padding-bottom: 4rem; }
+html[data-theme="blanc"] .brand-strip                   { border-top: 2px solid #000; border-bottom: 2px solid #000; }
+
+/* ─── Theme: Atelier ─────────────────────────────────────── */
+html[data-theme="atelier"] {
+  --background: #FDF5F0;
+  --surface:    #FFF9F7;
+  --border:     #EACFC4;
+  --text:       #3D2B1F;
+  --text-muted: #8B6355;
+  --accent:     #C4826A;
+  --font-heading: var(--font-dm-serif, Georgia, serif);
+  --hero-align: center;
+  --hero-text:  center;
+}
+
+html[data-theme="atelier"] .product-card-bg[data-index="0"] { background: #F5EAE4; }
+html[data-theme="atelier"] .product-card-bg[data-index="1"] { background: #EEE4F0; }
+html[data-theme="atelier"] .product-card-bg[data-index="2"] { background: #E8EFEA; }
+html[data-theme="atelier"] .product-card-bg[data-index="3"] { background: #F5E8E4; }
+html[data-theme="atelier"] .product-card-bg[data-index="4"] { background: #E8EBF0; }
+html[data-theme="atelier"] .product-card-bg[data-index="5"] { background: #F5EDE4; }
+html[data-theme="atelier"] .dress-icon                      { color: #C4826A; }
+
+/* ─── Theme: Manifesto ───────────────────────────────────── */
+html[data-theme="manifesto"] {
+  --background: #F5F5F5;
+  --surface:    #FFFFFF;
+  --border:     #111111;
+  --text:       #111111;
+  --text-muted: #555555;
+  --accent:     #C8102E;
+  --font-heading: var(--font-inter, sans-serif);
+  --hero-align: flex-start;
+  --hero-text:  left;
+}
+
+html[data-theme="manifesto"] .hero-headline {
+  font-size: clamp(3.5rem, 10vw, 8rem);
+  font-weight: 900;
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+
+html[data-theme="manifesto"] .product-grid          { grid-template-columns: repeat(2, 1fr); gap: 2px; }
+html[data-theme="manifesto"] .product-card-bg       { border-radius: 0; }
+html[data-theme="manifesto"] .product-card-name     { font-size: 1rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; }
+html[data-theme="manifesto"] .product-card-category { color: var(--accent); }
+html[data-theme="manifesto"] .dress-icon            { color: #333333; }
+html[data-theme="manifesto"] .brand-strip           { border-top: 3px solid #111; border-bottom: 3px solid #111; }
+html[data-theme="manifesto"] .brand-strip-divider   { border-color: #111; }
+html[data-theme="manifesto"] .brand-strip-title     { font-size: 1.25rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.05em; }
+
+/* ─── Hero alignment helper ──────────────────────────────── */
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  align-items: var(--hero-align, flex-start);
+  text-align: var(--hero-text, left);
+}
+
+/* ─── Classic card palette ───────────────────────────────── */
+.product-card-bg[data-index="0"] { background: #EEE8E0; }
+.product-card-bg[data-index="1"] { background: #E8E4EC; }
+.product-card-bg[data-index="2"] { background: #E4EBE4; }
+.product-card-bg[data-index="3"] { background: #EDE6DC; }
+.product-card-bg[data-index="4"] { background: #DDE4EC; }
+.product-card-bg[data-index="5"] { background: #EDE8E0; }

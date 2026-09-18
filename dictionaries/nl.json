@@ -1,0 +1,68 @@
+{
+  "nav": {
+    "collection": "Collectie",
+    "cart": "Winkelwagen",
+    "admin": "Beheer"
+  },
+  "home": {
+    "eyebrow": "De Collectie",
+    "headline": "Elegantie\nzonder compromis.",
+    "description": "Prachtige jurken met een discreet geïntegreerde slab — voor wie niet wil inleveren op stijl.",
+    "viewCollection": "Bekijk Collectie",
+    "categories": ["Avond", "Formeel", "Dag", "Avond", "Dag", "Feest"],
+    "values": {
+      "design": { "title": "Discreet van Nature", "text": "Elke geïntegreerde slab is onzichtbaar van buitenaf — onderdeel van het kledingstuk, geen nagedachte." },
+      "materials": { "title": "Premium Materialen", "text": "Wij gebruiken uitsluitend de fijnste zijde, fluweel en wol van Europese weverijen." },
+      "quality": { "title": "Gemaakt om te Dragen", "text": "Doordachte constructie betekent dat elke jurk gebouwd is om gedragen, geliefd en opnieuw gedragen te worden." }
+    }
+  },
+  "product": {
+    "back": "← Collectie",
+    "available": "{n} stuks beschikbaar",
+    "selectSize": "Kies een maat",
+    "size": "Maat",
+    "addToCart": "Aan winkelwagen toevoegen",
+    "added": "Toegevoegd ✓",
+    "outOfStock": "Uitverkocht",
+    "delivery": "Gratis bezorging bij bestellingen boven €150. Retourneren mogelijk binnen 14 dagen."
+  },
+  "cart": {
+    "empty": "Je winkelwagen is leeg",
+    "explore": "Ontdek de Collectie",
+    "title": "Winkelwagen",
+    "size": "Maat",
+    "each": "per stuk",
+    "total": "Totaal",
+    "remove": "Verwijderen",
+    "checkout": "Afrekenen →"
+  },
+  "checkout": {
+    "summary": "Bestelling",
+    "delivery": "Bezorggegevens",
+    "name": "Volledige naam",
+    "email": "E-mailadres",
+    "address": "Bezorgadres",
+    "place": "Bestelling plaatsen",
+    "placing": "Bestelling verwerken…",
+    "error": "Er ging iets mis. Probeer het opnieuw."
+  },
+  "confirmed": {
+    "title": "Bestelling Bevestigd",
+    "order": "Bestelling #",
+    "text": "Bedankt voor je bestelling. We sturen een bevestiging naar je e-mailadres en laten je weten wanneer je jurk onderweg is.",
+    "back": "Terug naar Collectie"
+  },
+  "comingSoon": {
+    "title": "Binnenkort",
+    "text": "Er komt iets moois aan."
+  },
+  "admin": {
+    "title": "Bestellingen",
+    "noOrders": "Nog geen bestellingen.",
+    "product": "Product",
+    "qty": "Aantal",
+    "price": "Prijs",
+    "total": "Totaal",
+    "status": { "pending": "In behandeling", "shipped": "Verzonden", "delivered": "Bezorgd" }
+  }
+}
