@@ -1,3 +1,5 @@
+import { cache } from "react";
+
 export type Dictionary = typeof import("@/dictionaries/nl.json");
 
 const loaders = {
@@ -12,7 +14,9 @@ export function isLocale(value: string): value is Locale {
   return (locales as readonly string[]).includes(value);
 }
 
-export async function getDictionary(locale: string): Promise<Dictionary> {
+// cache() dedupes this across the nested [locale] and (with-footer) layouts,
+// which both fetch the dictionary for the same request.
+export const getDictionary = cache(async (locale: string): Promise<Dictionary> => {
   const load = loaders[isLocale(locale) ? locale : "nl"];
   return load();
-}
+});

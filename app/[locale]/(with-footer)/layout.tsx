@@ -17,12 +17,7 @@ export default async function WithFooterLayout({
 
       <footer className="border-t py-10 mt-24" style={{ borderColor: "var(--border)" }}>
         <div className="mx-auto max-w-6xl px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm" style={{ color: "var(--text-muted)" }}>
-          <span
-            className="text-lg tracking-[0.2em] uppercase"
-            style={{ fontFamily: "var(--font-heading)", color: "var(--text)" }}
-          >
-            Smekke
-          </span>
+          <span className="brand-mark text-lg">Smekke</span>
           <span>© {new Date().getFullYear()} Smekke.</span>
           <Link
             href={`/${locale}/admin/orders`}

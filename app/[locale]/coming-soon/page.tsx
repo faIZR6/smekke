@@ -9,11 +9,6 @@ export default async function ComingSoonPage({
   const { locale } = await params;
   const dict = await getDictionary(locale);
 
-  // text-shadow has no spread param; stack concentric blurs instead of offsetting
-  // copies away from the glyphs, which would just dilute a 105px blur into haze
-  const glow =
-    "0 0 2px rgba(0,0,0,1), 0 0 6px rgba(0,0,0,1), 0 0 12px rgba(0,0,0,1), 0 0 20px rgba(0,0,0,1), 0 0 32px rgba(0,0,0,1), 0 0 48px rgba(0,0,0,1), 0 0 68px rgba(0,0,0,0.95), 0 0 95px rgba(0,0,0,0.85), 0 0 130px rgba(0,0,0,0.65), 0 0 170px rgba(0,0,0,0.4)";
-
   return (
     <section
       className="relative h-full flex flex-col items-center justify-center gap-8 px-6 text-center overflow-hidden"
@@ -32,15 +27,12 @@ export default async function ComingSoonPage({
           }}
         />
         <h1
-          className="relative text-5xl sm:text-7xl leading-none"
-          style={{ fontFamily: "var(--font-heading)", fontWeight: 300, color: "#F0EAE0", textShadow: glow }}
+          className="coming-soon-glow relative text-5xl sm:text-7xl leading-none"
+          style={{ fontFamily: "var(--font-heading)", fontWeight: 300, color: "#F0EAE0" }}
         >
           {dict.comingSoon.title}
         </h1>
-        <p
-          className="relative max-w-sm text-sm sm:text-base leading-relaxed"
-          style={{ color: "#8A837A", textShadow: glow }}
-        >
+        <p className="coming-soon-glow relative max-w-sm text-sm sm:text-base leading-relaxed" style={{ color: "#8A837A" }}>
           {dict.comingSoon.text}
         </p>
       </div>

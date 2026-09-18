@@ -2,11 +2,8 @@ import CartCount from "@/components/CartCount";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import ThemeProvider from "@/components/ThemeProvider";
 import { getDictionary, locales, type Locale } from "@/lib/getDictionary";
+import { SITE_IS_LIVE } from "@/lib/siteIsLive";
 import Link from "next/link";
-
-// Every route serves coming-soon content while the pre-launch gate in
-// proxy.ts is active, so the shop links in the header stay hidden too.
-const SITE_IS_LIVE = process.env.SITE_IS_LIVE === "true";
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -32,11 +29,7 @@ export default async function LocaleLayout({
         style={{ background: "color-mix(in srgb, var(--background) 92%, transparent)", borderColor: "var(--border)" }}
       >
         <div className="mx-auto max-w-6xl px-6 py-4 flex items-center justify-between gap-6">
-          <Link
-            href={`/${locale}`}
-            className="text-2xl tracking-[0.2em] uppercase shrink-0"
-            style={{ fontFamily: "var(--font-heading)", fontWeight: 400, color: "var(--text)" }}
-          >
+          <Link href={`/${locale}`} className="brand-mark text-2xl shrink-0" style={{ fontWeight: 400 }}>
             Smekke
           </Link>
 

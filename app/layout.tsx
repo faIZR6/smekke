@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Inter, Playfair_Display, DM_Serif_Display } from "next/font/google";
+import { THEME_STORAGE_KEY, DEFAULT_THEME } from "@/components/ThemeProvider";
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -38,7 +39,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* Set theme before paint to avoid flash */}
         <script
           dangerouslySetInnerHTML={{
-            __html: `try{document.documentElement.dataset.theme=localStorage.getItem('smekke-theme')||'noir'}catch(e){}`,
+            __html: `try{document.documentElement.dataset.theme=localStorage.getItem('${THEME_STORAGE_KEY}')||'${DEFAULT_THEME}'}catch(e){}`,
           }}
         />
       </head>
