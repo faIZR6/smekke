@@ -10,8 +10,6 @@ export default function LanguagePreference({ locale }: { locale: Locale }) {
   const router = useRouter();
   const pathname = usePathname();
 
-  // Runs once per page load only — otherwise this would immediately bounce
-  // the user back after they deliberately click the language switcher.
   useEffect(() => {
     let saved: string | null = null;
     try {
@@ -20,22 +18,23 @@ export default function LanguagePreference({ locale }: { locale: Locale }) {
       return;
     }
 
+    // LanguageSwitcher writes the new choice to storage before navigating,
+    // so by the time this runs storage already matches an explicit switch —
+    // a mismatch here only means the visit's locale doesn't match a
+    // previously remembered one (e.g. the domain default disagrees with it).
     if (saved && isLocale(saved) && saved !== locale) {
       const segments = pathname.split("/");
       segments[1] = saved;
       router.replace(segments.join("/") || "/");
+      return;
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
-  // Persists the active locale on every change, including explicit switches.
-  useEffect(() => {
     try {
       localStorage.setItem(LOCALE_STORAGE_KEY, locale);
     } catch {
       // ignore
     }
-  }, [locale]);
+  }, [locale, pathname, router]);
 
   return null;
 }
