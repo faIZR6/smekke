@@ -1,4 +1,5 @@
 import CartCount from "@/components/CartCount";
+import LanguagePreference from "@/components/LanguagePreference";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import ThemeProvider from "@/components/ThemeProvider";
 import { getDictionary, locales, type Locale } from "@/lib/getDictionary";
@@ -23,6 +24,7 @@ export default async function LocaleLayout({
   return (
     <>
       <ThemeProvider locale={locale} />
+      <LanguagePreference locale={l} />
 
       <header
         className="sticky top-0 z-10 backdrop-blur-sm border-b"

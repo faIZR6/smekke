@@ -1,9 +1,8 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
-import { locales, isLocale } from "@/lib/getDictionary";
+import { isLocale } from "@/lib/getDictionary";
 import { SITE_IS_LIVE } from "@/lib/siteIsLive";
 
-const DEFAULT_LOCALE = "nl";
 const ALLOWED_PATH_WHEN_NOT_LIVE = "coming-soon";
 
 export function proxy(request: NextRequest) {
@@ -31,9 +30,12 @@ export function proxy(request: NextRequest) {
     return NextResponse.next();
   }
 
-  // Detect preferred locale from Accept-Language header
-  const acceptLang = (request.headers.get("accept-language") ?? "").toLowerCase();
-  const preferred = locales.find((l) => acceptLang.startsWith(l)) ?? DEFAULT_LOCALE;
+  // No stored preference to read here (localStorage is client-only — see
+  // LanguagePreference), so default by domain: .nl visitors get Dutch.
+  // Use the Host header directly — nextUrl.hostname reflects the bind
+  // address, not necessarily the requested host.
+  const host = request.headers.get("host") ?? request.nextUrl.hostname;
+  const preferred = host.endsWith(".nl") ? "nl" : "en";
 
   if (!SITE_IS_LIVE) {
     return NextResponse.rewrite(new URL(`/${preferred}/${ALLOWED_PATH_WHEN_NOT_LIVE}`, request.url));
