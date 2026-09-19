@@ -43,7 +43,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           }}
         />
       </head>
-      <body className="h-screen flex flex-col">
+      <body className="h-dvh flex flex-col">
         {children}
       </body>
     </html>
